@@ -15,6 +15,6 @@ source $ZSH/oh-my-zsh.sh
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-# Set Spaceship ZSH as a prompt
+# Set Pure ZSH as a prompt
 autoload -U promptinit; promptinit
 prompt pure
