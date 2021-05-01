@@ -1,0 +1,21 @@
+cd() {
+    builtin cd "$@" && ls -a
+}
+
+epoch() {
+  date -j -f %s $(($1 / 1000))
+}
+
+mkcd() {
+  mkdir -p $1; cd $1
+}
+
+kill_port() {
+  lsof -i tcp:$1
+  lsof -i:$1 -Fp | head -n 1 | sed 's/^p//' | xargs kill
+}
+
+time_zsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}

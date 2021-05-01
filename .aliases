@@ -1,0 +1,4 @@
+alias ip='curl http://ifconfig.me/ip'
+alias localip='ifconfig -l | xargs -n1 ipconfig getifaddr'
+alias kbp='kill_port'
+alias tzsh='time_zsh'
